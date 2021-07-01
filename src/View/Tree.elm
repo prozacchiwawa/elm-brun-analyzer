@@ -107,7 +107,14 @@ drawNode marker (TreeNode n) =
                 Closed -> "node-closed"
 
         showIntegerValue v =
-            case BigInt.fromHexString v of
+            let
+                biConversion =
+                    if v == "" then
+                        Just (BigInt.fromInt 0)
+                    else
+                        BigInt.fromHexString v
+            in
+            case biConversion of
                 Just bi ->
                     div [class "node-detail"]
                         [ div [class "node-detail-label"] [text "decimal"]
