@@ -85,8 +85,6 @@ makeViewTree opened d search =
         |> List.map (makeTreeNode opened d)
         }
 
-{-| Represent nodes as colored circles with the node value inside.
--}
 drawNode : Bool -> Node -> Html Msg
 drawNode marker (TreeNode n) =
     let
