@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <style>
+         .fill {
+             height: 100vh;
+             width: 100vw;
+             background: rgb(245, 245, 245);
+         }
+
+         .spacing-5-5.p {
+             margin-top: 0.5em;
+             margin-bottom: 0.5em;
+         }
+
+         .node-heading {
+             padding-bottom: 0.25em;
+             position: relative;
+             width: 50em;
+             overflow: hidden;
+         }
+
+         .node-container {
+             padding-left: 2em;
+         }
+
+         .node-leaf:before {
+             content: "\23da";
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             margin: 0.5em;
+             padding: 0.5em;
+             background: #ccc;
+             border: 1px solid black;
+             border-radius: 0.5em;
+         }
+
+         .node-leaf {
+             display: inline-block;
+         }
+
+         .node-open:before {
+             content: "\25bc";
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             margin: 0.5em;
+             padding: 0.5em;
+             background: #ccc;
+             border: 1px solid black;
+             border-radius: 0.5em;
+         }
+
+         .node-open {
+             display: inline-block;
+         }
+
+         .node-closed:before {
+             content: "\25c0";
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             margin: 0.5em;
+             padding: 0.5em;
+             background: #ccc;
+             border: 1px solid black;
+             border-radius: 0.5em;
+         }
+
+         .node-headline-row {
+             display: flex;
+             flex-direction: row;
+         }
+
+         .node-closed {
+             display: inline-block;
+         }
+
+         .node-detail::first {
+             border-top: 1px dotted black;
+         }
+
+         .node-detail {
+             display: flex;
+             flex-direction: row;
+             align-items: center;
+             justify-content: left;
+             border-bottom: 1px dotted black;
+         }
+
+         .node-detail-label {
+             width: 10em;
+             height: 100%;
+             min-height: 2em;
+             margin-right: 1em;
+             border-right: 1px dotted black;
+             flex-shrink: 0;
+             flex-grow: 0;
+         }
+
+         .node-detail-value pre {
+             padding: 0.5em;
+             background-color: #6e6;
+         }
+
+         .clear-button {
+         }
+        </style>
+    </head>
+    <body>
+        <div id="app" class="fill"></div>
+        <script src="./elm.js"></script>
+        <script>
+         app = Elm.Main.init({
+             node: document.getElementById("app"),
+             flags: { hashes: {} }
+         });
+        </script>
+    </body>
+</html>
